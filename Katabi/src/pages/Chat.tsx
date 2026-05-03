@@ -1,11 +1,12 @@
-    import { useState } from "react";
+import { useState } from "react";
+import "../index.css";
 
-    type Message = {
+type Message = {
     text: string;
     sender: "me" | "stranger";
-    };
+};
 
-    export default function Chat() {
+export default function Chat() {
     const [messages, setMessages] = useState<Message[]>([]);
     const [input, setInput] = useState("");
     const [status, setStatus] = useState("idle");
@@ -19,12 +20,11 @@
     };
 
     const sendMessage = () => {
-        if (!input) return;
+        if (!input || status !== "connected") return;
 
         setMessages((prev) => [...prev, { text: input, sender: "me" }]);
         setInput("");
 
-        // fake reply
         setTimeout(() => {
         setMessages((prev) => [
             ...prev,
@@ -34,48 +34,39 @@
     };
 
     return (
-        <div className="h-screen bg-black text-green-400 flex flex-col">
+        <div className="chat-container">
 
-        {/* Header */}
-        <div className="p-3 border-b border-green-500">
+        <div className="header">
+            PIXEL CHAT <br />
             Status: {status}
         </div>
 
-        {/* Start Button */}
-        <button
-            onClick={startChat}
-            className="m-2 border border-green-500 px-3"
-        >
-            Start Chat
-        </button>
+        <div className="controls">
+            <button onClick={startChat}>START</button>
+        </div>
 
-        {/* Messages */}
-        <div className="flex-1 p-4 overflow-y-auto space-y-2">
+        <div className="messages">
             {messages.map((msg, i) => (
             <div
                 key={i}
-                className={msg.sender === "me" ? "text-right" : "text-left"}
+                className={`message ${msg.sender === "me" ? "me" : "stranger"}`}
             >
-                {msg.sender === "me" ? "You" : "Stranger"}: {msg.text}
+                {msg.text}
             </div>
             ))}
         </div>
 
-        {/* Input */}
-        <div className="p-3 border-t border-green-500 flex gap-2">
+        <div className="input-area">
             <input
-            className="flex-1 bg-black border border-green-500 px-2"
             value={input}
             onChange={(e) => setInput(e.target.value)}
+            disabled={status !== "connected"}
             />
-            <button
-            onClick={sendMessage}
-            className="border border-green-500 px-3"
-            >
+            <button onClick={sendMessage} disabled={status !== "connected"}>
             Send
             </button>
         </div>
 
         </div>
     );
-    }
+}
