@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useAppStore } from '../store/useAppStore';
+import { useAppStore } from '../store/UseAppStore';
 import type { Channel } from '../types';
 import { PixelButton } from '../components/Button';
 import { PixelInput } from '../components/Input';
