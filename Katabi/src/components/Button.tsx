@@ -36,7 +36,7 @@ export function PixelButton({
 
     return (
     <button
-      className={`${base} ${sizes[size]} ${variants[variant]} ${className}`}
+        className={`${base} ${sizes[size]} ${variants[variant]} ${className}`}
         disabled={disabled}
         {...props}
     >
