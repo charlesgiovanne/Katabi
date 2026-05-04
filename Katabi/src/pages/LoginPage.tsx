@@ -64,10 +64,10 @@ export function LoginPage() {
                 ))}
             </div>
             <h1 className="text-2xl text-primary text-glow-primary leading-tight">
-                PIXEL<br />CHAT
+                KATABI
             </h1>
             <p className="font-mono-pixel text-muted-foreground text-sm">
-                ▶ RETRO REAL-TIME MESSAGING
+                ▶ REAL-TIME MESSAGING
             </p>
             </div>
 
