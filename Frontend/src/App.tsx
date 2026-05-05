@@ -1,17 +1,24 @@
-import './index.css';
-import { useAppStore } from './store/UseAppStore';
-import { LoginPage } from './pages/LoginPage';
-import { ChannelsPage } from './pages/ChannelsPage';
-import { ChatPage } from './pages/ChatPage';
+import { AppProvider, useApp } from './context/AppContext';
+import Landing from './pages/Landing';
+import Lobby from './pages/Lobby';
+import ChatRoom from './pages/ChatRoom';
+
+function Router() {
+  const { currentPage } = useApp();
+
+  switch (currentPage) {
+    case 'landing': return <Landing />;
+    case 'lobby':   return <Lobby />;
+    case 'chat':    return <ChatRoom />;
+    default:        return <Landing />;
+  }
+}
 
 export default function App() {
-  const screen = useAppStore(s => s.screen);
-
+  
   return (
-    <>
-      {screen === 'login' && <LoginPage />}
-      {screen === 'channels' && <ChannelsPage />}
-      {screen === 'chat' && <ChatPage />}
-    </>
+    <AppProvider>
+      <Router />
+    </AppProvider>
   );
 }
