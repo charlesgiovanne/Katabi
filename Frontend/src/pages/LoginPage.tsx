@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useAppStore } from '../store/UseAppStore';
-import { PixelButton } from '../components/Button';
-import { PixelInput } from '../components/Input';
+import { PixelButton } from '../components/ui/Button';
+import { PixelInput } from '../components/ui/Input';
 
 const DEMO_USERS = ['PixelHero', 'NeonCat', 'ByteWizard', 'GlitchGhost'];
 

@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { useAppStore, formatTime } from '../store/UseAppStore';
 import type { Message } from '../types';
-import { PixelButton } from '../components/Button';
+import { PixelButton } from '../components/ui/Button';
 import { OnlineDot } from '../components/OnlineDot';
 
 function MessageBubble({ msg, isOwn }: { msg: Message; isOwn: boolean }) {

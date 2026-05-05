@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { useAppStore } from '../store/UseAppStore';
 import type { Channel } from '../types';
-import { PixelButton } from '../components/Button';
-import { PixelInput } from '../components/Input';
+import { PixelButton } from '../components/ui/Button';
+import { PixelInput } from '../components/ui/Input';
 import { OnlineDot } from '../components/OnlineDot';
 
 function formatTimeAgo(ts: number) {
