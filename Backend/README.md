@@ -11,8 +11,8 @@
 
 | Concern | Recommended |
 |---|---|
-| Runtime | Node.js (v20+) |
-| Framework | Express.js or Fastify |
+| Runtime | Node.js (v20+)  (can change this) |
+| Framework | Express.js or Fastify (can change this)|
 | Real-time | Socket.io (preferred) or native `ws` |
 | In-memory store | Redis (rooms, presence, message buffer) |
 | Persistent store | PostgreSQL (message history, audit) — optional for v1 |
