@@ -30,7 +30,7 @@ export function Header({
                 </PixelButton>
             ) : (
                 <span className="font-pixel text-sm text-primary text-glow-primary tracking-widest">
-                PIXELCHAT
+                KATABI
                 </span>
             )}
             {title && (
