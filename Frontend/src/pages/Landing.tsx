@@ -5,7 +5,7 @@ import { PixelButton } from '../components/ui/Button';
 import { generateUsername } from '../utils/nameGen';
 
 const BOOT_LINES = [
-    'PIXELCHAT OS v2.4.1',
+    'KATABI OS v2.4.1',
     'INITIALIZING SUBSYSTEMS...',
     'LOADING MEMORY BANKS.........OK',
     'CHECKING NETWORK UPLINK......OK',
@@ -71,7 +71,7 @@ export default function Landing() {
             <span className="w-2.5 h-2.5 bg-destructive" />
             <span className="w-2.5 h-2.5 bg-pixel-yellow" />
             <span className="w-2.5 h-2.5 bg-primary" />
-            <span className="font-pixel text-xs text-muted-foreground ml-2">TERMINAL — PIXELCHAT</span>
+            <span className="font-pixel text-xs text-muted-foreground ml-2">TERMINAL — KATABI</span>
             </div>
 
             {/* terminal body */}
@@ -155,7 +155,7 @@ export default function Landing() {
         {/* footer marquee */}
         <div className="mt-6 w-full max-w-lg overflow-hidden border border-border/50 bg-secondary/20 py-1">
             <div className="animate-marquee whitespace-nowrap font-pixel text-xs text-muted-foreground/50 tracking-widest">
-            ★ PIXELCHAT — EPHEMERAL ROOMS — MULTI-USER — RETRO VIBES — ROOMS EXPIRE AFTER 1HR INACTIVITY ★ PIXELCHAT ★
+            ★ KATABI — EPHEMERAL ROOMS — MULTI-USER — RETRO VIBES — ROOMS EXPIRE AFTER 1HR INACTIVITY ★ KATABI ★
             </div>
         </div>
         </div>
