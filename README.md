@@ -2,6 +2,6 @@
 A PDC PIT project
 
 
-# pls read \Frontend\README.md
+# pls read /Frontend/README.md
 
-Link: [\Frontend\README.md](\Katabi\Frontend\README.md)
+Link: [/Frontend/README.md](/Katabi/Frontend/README.md)
