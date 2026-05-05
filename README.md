@@ -1,5 +1,6 @@
 # Katabi (A real time messaging web app)
-A PDC PIT project
+
+CS325 - Parallel and Distributed Computing Final PIT
 
 
 # pls read /Frontend/README.md
