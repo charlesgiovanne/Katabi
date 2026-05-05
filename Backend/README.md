@@ -1,4 +1,4 @@
-# PIXELCHAT — Backend Requirements & Flow Specification
+# Katabi — Backend Requirements & Flow Specification
 
 > Document for the backend programmer.
 > Frontend stack: Vite + React + TypeScript + Tailwind CSS.
