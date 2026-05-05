@@ -4,16 +4,17 @@ import type { User, Page } from '../types';
 interface AppContextType {
     user: User | null;
     setUser: (user: User) => void;
+    logout: () => void;
     currentPage: Page;
     navigateTo: (page: Page) => void;
     currentRoomId: string | null;
     enterRoom: (roomId: string) => void;
     leaveRoom: () => void;
-}
+    }
 
-const AppContext = createContext<AppContextType | null>(null);
+    const AppContext = createContext<AppContextType | null>(null);
 
-export function AppProvider({ children }: { children: ReactNode }) {
+    export function AppProvider({ children }: { children: ReactNode }) {
     const [user, setUserState] = useState<User | null>(null);
     const [currentPage, setCurrentPage] = useState<Page>('landing');
     const [currentRoomId, setCurrentRoomId] = useState<string | null>(null);
@@ -36,6 +37,15 @@ export function AppProvider({ children }: { children: ReactNode }) {
         sessionStorage.setItem('pixelchat_username', user.username);
     };
 
+    const logout = () => {
+        setUserState(null);
+        setCurrentPage('landing');
+        setCurrentRoomId(null);
+        sessionStorage.removeItem('pixelchat_user');
+        sessionStorage.removeItem('pixelchat_username');
+        sessionStorage.removeItem('pixelchat_active_room');
+    };
+
     const navigateTo = (page: Page) => {
         setCurrentPage(page);
     };
@@ -54,6 +64,7 @@ export function AppProvider({ children }: { children: ReactNode }) {
         <AppContext.Provider value={{
         user,
         setUser,
+        logout,
         currentPage,
         navigateTo,
         currentRoomId,

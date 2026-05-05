@@ -10,7 +10,7 @@ import { PixelInput } from '../components/ui/Input';
 import type { Room } from '../types';
 
 export default function Lobby() {
-    const { user, enterRoom } = useApp();
+    const { user, enterRoom, logout } = useApp();
     const socket = useSocket({ userId: user!.id, currentRoomId: null });
 
     const [search, setSearch] = useState('');
@@ -45,9 +45,14 @@ export default function Lobby() {
             username={user!.username}
             status={socket.status}
             rightSlot={
-            <PixelButton variant="accent" size="sm" onClick={() => setShowCreate(true)}>
+            <div className="flex items-center gap-2">
+                <PixelButton variant="accent" size="sm" onClick={() => setShowCreate(true)}>
                 + NEW ROOM
-            </PixelButton>
+                </PixelButton>
+                <PixelButton variant="ghost" size="sm" onClick={logout} className="border border-border text-muted-foreground hover:text-destructive hover:border-destructive">
+                ⏻ LOG OFF
+                </PixelButton>
+            </div>
             }
         />
 
